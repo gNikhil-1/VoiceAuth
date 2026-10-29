@@ -18,7 +18,7 @@ def register():
     username = data["username"]
     password = data["password"]
     
-    hashed_password = hash_password(password)
+    hashed_password = check_password_hash(password)
     
     conn = get_db_connection()
     cursor = conn.cursor()

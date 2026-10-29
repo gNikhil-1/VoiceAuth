@@ -1,0 +1,66 @@
+# Dependencies (Never commit these)
+node_modules/
+.pnp
+.pnp.js
+jspm_packages/
+bower_components/
+
+# Compiled / Build Outputs (Vite, CRA, Next.js, Remix, Astro, Storybook)
+dist/
+build/
+out/
+.next/
+.nuxt/
+.astro/
+.output/
+.vercel/
+.netlify/
+.serverless/
+storybook-static/
+
+# Caches & Temporary Tooling Files
+.cache/
+.parcel-cache/
+.turbo/
+.vite/
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+
+# Testing & Coverage Reports (Huge HTML/JSON line inflators)
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+cypress/videos/
+cypress/screenshots/
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# OS & Editor Junk
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
