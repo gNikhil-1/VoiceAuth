@@ -1,0 +1,69 @@
+# Auto-normalize line endings across Windows/Mac/Linux
+* text=auto eol=lf
+
+# ------------------------------------------------------------------
+# 1. LOCKFILES & PACKAGE MANAGERS
+# ------------------------------------------------------------------
+package-lock.json linguist-generated=true
+yarn.lock linguist-generated=true
+pnpm-lock.yaml linguist-generated=true
+bun.lockb linguist-generated=true binary
+npm-shrinkwrap.json linguist-generated=true
+.yarn/** linguist-vendored=true
+
+# ------------------------------------------------------------------
+# 2. REACT / VITE / CRA STARTER BOILERPLATE & ASSETS
+# ------------------------------------------------------------------
+# Ignores default scaffolding files
+**/reportWebVitals.js linguist-generated=true
+**/reportWebVitals.ts linguist-generated=true
+**/setupTests.js linguist-generated=true
+**/setupTests.ts linguist-generated=true
+**/react-app-env.d.ts linguist-generated=true
+**/vite-env.d.ts linguist-generated=true
+**/next-env.d.ts linguist-generated=true
+
+# Default public folder assets & huge inline SVGs (often 1000s of lines of XML)
+public/** linguist-generated=true
+*.svg linguist-generated=true
+
+# ------------------------------------------------------------------
+# 3. UI COMPONENT BOILERPLATE (e.g., Shadcn UI / Radix copies)
+# ------------------------------------------------------------------
+
+src/components/ui/** linguist-generated=true
+
+# ------------------------------------------------------------------
+# 4. MINIFIED, BUNDLED, OR GENERATED CODE (GraphQL, Prisma, OpenAPI, SourceMaps)
+# ------------------------------------------------------------------
+*.min.js linguist-generated=true
+*.min.css linguist-generated=true
+*.bundle.js linguist-generated=true
+*.map linguist-generated=true
+*.d.ts linguist-generated=true
+**/__generated__/** linguist-generated=true
+**/generated/** linguist-generated=true
+
+# ------------------------------------------------------------------
+# 5. SNAPSHOT TESTS & MOCK DATA
+# ------------------------------------------------------------------
+# Jest snapshots and huge JSON mock files inflate additions massively
+*.snap linguist-generated=true
+**/__snapshots__/** linguist-generated=true
+**/__mocks__/** linguist-vendored=true
+
+# ------------------------------------------------------------------
+# 6. BINARY ASSETS (Prevents Git from counting binary data as text lines)
+# ------------------------------------------------------------------
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.avif binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.pdf binary
