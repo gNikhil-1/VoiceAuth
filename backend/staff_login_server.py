@@ -8,7 +8,37 @@ app = Flask(__name__)
 def home():
     return jsonify({"message": "Welcome to the staff Login System API!"})
 
-
+@app.route("/register", methods=["POST"])
+def register():
+    data = request.get_json()
+    
+    required_fields = ["username", "password", "first_name", "last_name", "email"]
+    if not data or not all(data.get(field) for field in required_fields):
+        return jsonify({"error": "Missing required fields (username, password, first_name, last_name, email)"}), 400
+    
+    username = data["username"] 
+    password = data["password"]  
+    first_name = data["first_name"]   
+    last_name = data["last_name"]  
+    email = data["email"]  
+    hashed_password = generate_password_hash(password)    
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    
+    try:
+        cursor.execute(
+            """INSERT INTO staff (username, first_name, last_name, email, password) 
+               VALUES (?, ?, ?, ?, ?)""",
+            (username, first_name, last_name, email, hashed_password)
+        )
+        conn.commit()
+    except Exception as e:
+        return jsonify({"error": "Username or email already exists, or database error."}), 400
+    finally:
+        conn.close()
+        
+    return jsonify({"message": f"Staff member '{username}' registered successfully!"}), 201
+    
 
 @app.route("/login", methods=["POST"])
 def login():
