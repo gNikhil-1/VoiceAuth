@@ -15,7 +15,6 @@ class VoiceAuthDashboardApp extends StatelessWidget {
         useMaterial3: true,
         colorSchemeSeed: Colors.indigo,
         scaffoldBackgroundColor: const Color(0xFFF6F7FB),
-        // Black primary buttons everywhere (login, register, etc.)
         filledButtonTheme: FilledButtonThemeData(
           style: FilledButton.styleFrom(
             backgroundColor: Colors.black,
@@ -36,7 +35,6 @@ class VoiceAuthDashboardApp extends StatelessWidget {
             ),
           ),
         ),
-        // Text buttons (Register here / Back to Login) are black
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(foregroundColor: Colors.black),
         ),
