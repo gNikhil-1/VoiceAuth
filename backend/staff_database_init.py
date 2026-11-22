@@ -17,7 +17,7 @@ def init_db():
                 first_name TEXT NOT NULL,
                 last_name TEXT NOT NULL,
                 email TEXT UNIQUE NOT NULL,
-                password TEXT NOT NULL,
+                password TEXT NOT NULL
                 
             )
         """)
