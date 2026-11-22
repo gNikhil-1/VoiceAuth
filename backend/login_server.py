@@ -1,8 +1,10 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 from database_init import get_db_connection
 from auth_utils import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/")
 def home():
@@ -67,3 +69,65 @@ def login():
 
 if __name__ == "__main__":
     app.run(port = 5001)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
